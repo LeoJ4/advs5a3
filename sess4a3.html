@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> sess4 </title>
+<script type="text/javascript">
+
+
+function Animal(type,size,color)
+{
+   this.size = size;
+   this.type = type;
+   this.color= color;
+}
+
+Animal.prototype.display = function()
+{
+	return [this.size.toUpperCase(),this.type.toUpperCase(),this.color.toUpperCase()].join(' ');
+};
+
+
+function rabbit(type,size,color)
+{
+	Animal.call(this,type,size,color);
+}
+
+rabbit.prototype = new Animal();
+
+
+var a = new rabbit('Marsupial','small','white');
+
+console.log(a.display());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
